@@ -11,10 +11,10 @@ export default function Flashcard({flashcard}) {
   function setMaxHeight(){
     const frontHeight = frontEl.current.getBoundingClientRect().height
     const backHeight = backEl.current.getBoundingClientRect().height
-    setHeight(!flip ? frontHeight:backHeight)
+    setHeight( !flip ? frontHeight:backHeight )
   }
 
-  useEffect(setMaxHeight, [flashcard.question, flashcard.answer,flashcard.option,flip])
+  useEffect(setMaxHeight, [flashcard.question, flashcard.answer, flashcard.option, flip])
 
   useEffect(() => {
     window.addEventListener('resize', setMaxHeight)
@@ -26,7 +26,7 @@ export default function Flashcard({flashcard}) {
     <div 
     className={` card ${flip ? 'flip': ''}`}
     onClick={() => setFlip(!flip)}
-    style={{height:height}}
+    style={{ height:height }}
     >
     
     <div className='front' ref={frontEl}>
